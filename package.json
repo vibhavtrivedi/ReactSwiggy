@@ -1,0 +1,14 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "this is react package",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "vibhav trivedi",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
