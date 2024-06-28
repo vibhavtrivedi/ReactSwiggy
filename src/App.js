@@ -1,14 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import HeaderComponent from "./Components/Header";
+
 import BodyComponent from "./components/Body";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import AppComponent from "./components/About";
+
 import ContactComponent from "./components/ContactUs";
 import ErrorComponent from "./components/Error";
-import ResturantMenuComponent from "./components/ResturantMenu";
 import LoginComponent from "./components/Login/Login";
 import RegisterComponent from "./components/Register/Register";
+import AppComponent from "./components/About/About";
+import HeaderComponent from "./components/Header/Header";
+import ResturantMenuComponent from "./components/ResturantMenu/ResturantMenu";
 
 const AppLayout = () => {
   return (
