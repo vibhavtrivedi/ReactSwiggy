@@ -1,0 +1,18 @@
+.resturant-menu {
+    font-family: monospace;
+    padding: 0px 16px 16px;
+    .menu-card {
+        background-color: #fff;
+        border-radius: 20px;
+        border: 1px solid #fff;
+        box-shadow: #fff 0px 8px 16px 0px;
+        padding: 16px;
+        color: #000;
+        .cuisines {
+            color: rgb(241, 87, 0);
+        }
+        .areaname {
+            color: rgba(2, 6, 12, 0.6);
+        }
+    }
+}
