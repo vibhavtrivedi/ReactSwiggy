@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ShimmerComponent from "./Shimmer";
+import ShimmerComponent from "../Shimmer";
 import "./ResturantMenu.css";
 import { useParams } from "react-router-dom";
 
