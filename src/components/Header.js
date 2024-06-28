@@ -11,7 +11,7 @@ const HeaderComponent = () => {
   return (
     <div className="header">
       <div className="image">
-        <img className="res-logo" alt="logo" src={LOGO_URL} />
+        <Link to="/"><img className="res-logo" alt="logo" src={LOGO_URL} /></Link>
       </div>
       <div className="nav-items">
         <ul>
