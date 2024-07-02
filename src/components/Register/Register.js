@@ -1,50 +1,50 @@
-import { Link } from 'react-router-dom';
-import './Resgister.css';
+import { Link } from "react-router-dom";
+import "./Resgister.css";
 const RegisterComponent = () => {
-    return (
-      <div className='login-page'> 
-        <div className="login-panel">
+  return (
+    <div className="login-page">
+      <div className="login-panel">
         <form class="form-horizontal">
-            <div className="form-group">
+          <div className="form-group">
             <div className="label-container">
-                <label className="form-label">Username</label>
+              <label className="form-label">Username</label>
             </div>
             <div className="username-input">
-                <input placeholder="username" />
+              <input placeholder="username" />
             </div>
-            </div>
-            <div className="form-group">
+          </div>
+          <div className="form-group">
             <div className="label-container">
-                <label className="form-label">Email</label>
+              <label className="form-label">Email</label>
             </div>
             <div className="username-input">
-                <input placeholder="Email" />
+              <input placeholder="Email" />
             </div>
+          </div>
+          <div className="form-group">
+            <div className="password-container">
+              <label className="form-label">Password</label>
             </div>
-            <div className="form-group">
-            <div className='password-container'>
-                <label className="form-label">Password</label>
+            <div className="password-input">
+              <input placeholder="password" />
             </div>
-            <div className='password-input'>
-                <input placeholder="password" />
+          </div>
+          <div className="form-group">
+            <div className="password-container">
+              <label className="form-label">Confirm Password</label>
             </div>
-                    </div>
-                    <div className="form-group">
-            <div className='password-container'>
-                <label className="form-label">Confirm Password</label>
+            <div className="password-input">
+              <input placeholder="confirm password" />
             </div>
-            <div className='password-input'>
-                <input placeholder="confirm password" />
-            </div>
-            </div>
-            <input
+          </div>
+          <input
             type="submit"
             value="Register"
-            class="btn active float-right"
-            ></input>
+            className="btn active float-right"
+          ></input>
         </form>
-        </div>
       </div>
+    </div>
   );
 };
 
