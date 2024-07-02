@@ -1,6 +1,5 @@
 import User from "../User/user";
 
-
 const AppComponent = () => {
     return (
         <div>
