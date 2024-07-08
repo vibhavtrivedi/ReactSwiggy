@@ -7,8 +7,14 @@ class User extends React.Component {
       count: 0,
       count2: 1,
     };
+    console.log("child constructor component");
+  }
+
+  componentDidMount() {
+    console.log("child did mount");
   }
   render() {
+    console.log("child render");
     const { name, designation } = this.props;
     const { count, count2 } = this.state;
     return (
