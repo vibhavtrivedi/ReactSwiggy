@@ -1,5 +1,6 @@
 import React from "react";
-import User from "../User/User";
+import User from "../User/user";
+
 
 class About extends React.Component {
   constructor(props) {

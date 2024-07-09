@@ -1,38 +1,37 @@
 import React from "react";
-
+import './User.css';
 class User extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0,
-      count2: 1,
+      userInfo: {
+          location : "Default"
+        }
     };
     console.log("child constructor component");
   }
 
-  componentDidMount() {
-    console.log("child did mount");
+  async componentDidMount() {
+    const data = await fetch("https://api.github.com/users/vibhavtrivedi");
+    const json = await data.json();
+    console.log(json);
+    this.setState({
+      userInfo : json,
+    })
+  }
+
+  componentWillUnmount() {
+    console.log("component will unmount");
   }
   render() {
-    console.log("child render");
     const { name, designation } = this.props;
-    const { count, count2 } = this.state;
+    const { location, avatar_url } = this.state.userInfo;
     return (
-      <div>
+      <div className="user-data">
+        <img alt="user profile" src={avatar_url} />
         <h3>I am {name}</h3>
         <h3>{designation}</h3>
-        <h3>Count : {count}</h3>
-        <h3>Count2: {count2}</h3>
-        <button
-          onClick={() => {
-            this.setState({
-              count: this.state.count + 1,
-              count2: this.state.count2 + 2,
-            });
-          }}
-        >
-          Click me
-        </button>
+        <h3>{location }</h3>
       </div>
     );
   }

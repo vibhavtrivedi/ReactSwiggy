@@ -15,8 +15,9 @@ const BodyComponent = () => {
   const fetchData = async () => {
     const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.2589476&lng=72.96889039999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
     const jsonData = await data.json();
-    setListOfResturants(jsonData?.data?.cards[4].card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setFilteredResturants(jsonData?.data?.cards[4].card?.card?.gridElements?.infoWithStyle?.restaurants);
+    console.log("js", jsonData);
+    setListOfResturants(jsonData?.data?.cards[1].card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilteredResturants(jsonData?.data?.cards[1].card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
 
   return listOfResturants.length === 0 ? <ShimmerComponent /> : (
