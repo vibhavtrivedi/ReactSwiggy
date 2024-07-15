@@ -3,10 +3,12 @@ import ShimmerComponent from "../Shimmer";
 import "./ResturantMenu.css";
 import { useParams } from "react-router-dom";
 import useResturantMenu from "../../utils/CustomHooks/useResturantMenu";
+import useOnlineStatus from "../../utils/CustomHooks/useOnlineStatus";
 
 const ResturantMenuComponent = () => {
   const { id } = useParams();
   const menuData = useResturantMenu(id);
+  const status = useOnlineStatus();
 
   if (menuData === null) {
     return <ShimmerComponent />;
