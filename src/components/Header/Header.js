@@ -6,7 +6,6 @@ const HeaderComponent = () => {
   const [btnSwitch, setBtnSwitch] = useState("Login");
 
   useEffect(() => {
-    console.log("Use effect is called");
   }, [])
   return (
     <div className="header">
