@@ -14,5 +14,18 @@ const ResturantCard = ({resData}) => {
       </div>  
     </div>
   )
-  };
+};
+  
+export const WithPromtedLabel = (ResturantCard) => {
+  return (props) => {
+    console.log("props", props);
+    return (
+      <div className="res-promoted">
+        <label className="absolute black text">More than 28mins</label>
+        <ResturantCard {...props} />
+      </div>
+    )
+  }
+}
+
 export default ResturantCard;

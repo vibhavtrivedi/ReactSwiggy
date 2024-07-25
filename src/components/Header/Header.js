@@ -5,27 +5,35 @@ import { Link } from "react-router-dom";
 const HeaderComponent = () => {
   const [btnSwitch, setBtnSwitch] = useState("Login");
 
-  useEffect(() => {
-  }, [])
+  useEffect(() => {}, []);
   return (
     <div className="header">
       <div className="image">
-        <Link to="/"><img className="res-logo" alt="logo" src={LOGO_URL} /></Link>
+        <Link to="/">
+          <img className="res-logo" alt="logo" src={LOGO_URL} />
+        </Link>
       </div>
       <div className="nav-items">
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/contact">Contact Us</Link></li>
-          <li><Link to="/about">About Us</Link></li>
-          <li><Link to="/cart">Cart</Link></li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact Us</Link>
+          </li>
+          <li>
+            <Link to="/about">About Us</Link>
+          </li>
+          <li>
+            <Link to="/cart">Cart</Link>
+          </li>
           <li
-            // onClick={() => {
-            //   btnSwitch === "Login" ? setBtnSwitch("Logout") : setBtnSwitch("Login");
-            // }}
-            // className="logout-btn"
+          // onClick={() => {
+          //   btnSwitch === "Login" ? setBtnSwitch("Logout") : setBtnSwitch("Login");
+          // }}
+          // className="logout-btn"
           >
             <Link to="/login">{btnSwitch}</Link>
-            
           </li>
         </ul>
       </div>

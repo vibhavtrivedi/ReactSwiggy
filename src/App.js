@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 
 import BodyComponent from "./components/Body";
@@ -20,6 +20,8 @@ const AppLayout = () => {
     </div>
   );
 };
+
+const CartComponent = lazy(() => import("./components/Cart/Cart"));
 
 const appRouter = createBrowserRouter([
   {
@@ -49,6 +51,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/register",
         element: <RegisterComponent />,
+      },
+      {
+        path: "/cart",
+        element: (
+          <Suspense fallback={<h1>...Loading</h1>}>
+            <CartComponent />
+          </Suspense>
+        ),
       },
     ],
     errorElement: <ErrorComponent />,
