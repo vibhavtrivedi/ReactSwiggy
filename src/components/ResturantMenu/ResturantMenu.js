@@ -9,7 +9,10 @@ const ResturantMenuComponent = () => {
   const { id } = useParams();
   const menuData = useResturantMenu(id);
   const status = useOnlineStatus();
-
+  if (menuData === null) {
+    return <ShimmerComponent />;
+  }
+  console.log("men", menuData);
   const { name, avgRating, costForTwoMessage, cuisines, areaName } =
     menuData?.cards[2]?.card?.card?.info;
   const { minDeliveryTime, deliveryTime } =
@@ -20,9 +23,7 @@ const ResturantMenuComponent = () => {
   if (!status) {
     return <div>Check your internet connection</div>;
   }
-  if (menuData === null) {
-    return <ShimmerComponent />;
-  }
+  
   return (
     <div className="resturant-menu">
       <h1>{name}</h1>

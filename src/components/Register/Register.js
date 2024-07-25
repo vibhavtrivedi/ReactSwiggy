@@ -4,7 +4,7 @@ const RegisterComponent = () => {
   return (
     <div className="login-page">
       <div className="login-panel">
-        <form class="form-horizontal">
+        <form className="form-horizontal">
           <div className="form-group">
             <div className="label-container">
               <label className="form-label">Username</label>
