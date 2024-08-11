@@ -4,12 +4,19 @@ import "./ResturantMenu.css";
 import { useParams } from "react-router-dom";
 import useResturantMenu from "../../utils/CustomHooks/useResturantMenu";
 import useOnlineStatus from "../../utils/CustomHooks/useOnlineStatus";
+import ResturantCategory from "./ResturantCategory";
 
 const ResturantMenuComponent = () => {
   const { id } = useParams();
   const menuData = useResturantMenu(id);
   const status = useOnlineStatus();
-
+  const categories =
+    menuData?.cards[4]?.groupedCard?.cardGroupMap.REGULAR.cards.filter(
+      (c) =>
+        c.card?.card?.["@type"] ==
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+  console.log("categories", categories);
   if (!status) {
     return <div>Check your internet connection</div>;
   }
@@ -51,6 +58,12 @@ const ResturantMenuComponent = () => {
             );
           })}
         </ul> */}
+        {categories.map((category) => (
+          <ResturantCategory
+            key={category.card.card.title}
+            data={category.card.card}
+          />
+        ))}
       </div>
     );
   }
