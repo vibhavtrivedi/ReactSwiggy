@@ -1,0 +1,14 @@
+.accordion {
+    margin: 16px 16px 16px 0px;
+    .accordion-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        border: 1px solid #fff;
+        cursor: pointer;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
