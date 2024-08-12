@@ -29,7 +29,7 @@ const BodyComponent = () => {
     console.log("Test", jsonData?.data?.cards[1].card?.card);
   };
 
-  return listOfResturants.length === 0 ? (
+  return listOfResturants?.length === 0 ? (
     <ShimmerComponent />
   ) : (
     <div className="body">
