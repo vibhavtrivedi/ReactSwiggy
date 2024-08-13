@@ -10,6 +10,7 @@ const ResturantMenuComponent = () => {
   const { id } = useParams();
   const menuData = useResturantMenu(id);
   const status = useOnlineStatus();
+  const [showIndex, setShowIndex] = useState(null);
   const categories =
     menuData?.cards[4]?.groupedCard?.cardGroupMap.REGULAR.cards.filter(
       (c) =>
@@ -27,9 +28,6 @@ const ResturantMenuComponent = () => {
       menuData?.cards[2]?.card?.card?.info;
     const { minDeliveryTime, deliveryTime } =
       menuData?.cards[2]?.card?.card?.info.sla;
-    // const { title, itemCards } =
-    //   menuData?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR.cards[2]?.card
-    //     ?.card.categories[0];
     return (
       <div className="resturant-menu">
         <h1>{name}</h1>
@@ -43,25 +41,12 @@ const ResturantMenuComponent = () => {
             {minDeliveryTime} - {deliveryTime} mins
           </h3>
         </div>
-        {/* <h1>{title}</h1> */}
-
-        {/* <ul className="menu-details">
-          {itemCards.map((cards) => {
-            return (
-              <li className="menu-name" key={cards?.card?.info?.id}>
-                <span>{cards?.card?.info?.name}</span>{" "}
-                <span>
-                  {cards?.card?.info?.price / 100 ||
-                    cards?.card?.info?.defaultPrice / 100}
-                </span>
-              </li>
-            );
-          })}
-        </ul> */}
-        {categories.map((category) => (
+        {categories.map((category, index) => (
           <ResturantCategory
             key={category.card.card.title}
             data={category.card.card}
+            showItem={index == showIndex ? true : false}
+            setShowIndex={() => setShowIndex(index)}
           />
         ))}
       </div>
