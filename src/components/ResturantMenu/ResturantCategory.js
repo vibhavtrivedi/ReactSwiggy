@@ -5,8 +5,9 @@ const ResturantCategory = ({ data, showItem, setShowIndex }) => {
   const handleItem = () => {
     if (showItem) {
       setShowIndex(null);
+    } else {
+      setShowIndex();
     }
-    setShowIndex();
   };
   return (
     <div className="accordion">
