@@ -17,7 +17,6 @@ const ResturantMenuComponent = () => {
         c.card?.card?.["@type"] ==
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
-  console.log("categories", categories);
   if (!status) {
     return <div>Check your internet connection</div>;
   }
