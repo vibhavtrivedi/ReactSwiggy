@@ -26,7 +26,6 @@ const BodyComponent = () => {
       jsonData?.data?.cards[1].card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
-    console.log("Test", jsonData?.data?.cards[1].card?.card);
   };
 
   return listOfResturants?.length === 0 ? (
