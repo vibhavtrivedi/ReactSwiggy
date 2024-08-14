@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ResturantCard, { WithPromtedLabel } from "./ResturantCard";
 import ShimmerComponent from "./Shimmer";
 import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext";
 
 const BodyComponent = () => {
   const [listOfResturants, setListOfResturants] = useState([]);
   const [filteredResturants, setFilteredResturants] = useState([]);
   const [searchText, setSearchText] = useState("");
 
+  const { loginName, setUserName } = useContext(UserContext);
   useEffect(() => {
     fetchData();
   }, []);
@@ -51,6 +53,13 @@ const BodyComponent = () => {
           >
             Search
           </button>
+        </div>
+        <div className="user-input">
+          <label>UserName</label>
+          <input
+            value={loginName}
+            onChange={(e) => setUserName(e.target.value)}
+          />
         </div>
         <button
           className="filter-btn"
