@@ -181,3 +181,16 @@ body {
     background-position: 200% 0;
   }
 }
+
+.search,
+.user-input {
+  display: flex;
+  gap:10px;
+  align-items: center;
+  input {
+    border: 1px solid #9acc14;
+    padding: 5px;
+    background-color: transparent;
+    color: #fff;
+  }
+} 

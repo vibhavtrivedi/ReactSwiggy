@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { LOGO_URL } from "../../utils/constants";
 import { Link } from "react-router-dom";
+import UserContext from "../../utils/UserContext";
 
 const HeaderComponent = () => {
   const [btnSwitch, setBtnSwitch] = useState("Login");
-
+  const { loginName } = useContext(UserContext);
   useEffect(() => {}, []);
   return (
     <div className="header">
@@ -27,13 +28,8 @@ const HeaderComponent = () => {
           <li>
             <Link to="/cart">Cart</Link>
           </li>
-          <li
-          // onClick={() => {
-          //   btnSwitch === "Login" ? setBtnSwitch("Logout") : setBtnSwitch("Login");
-          // }}
-          // className="logout-btn"
-          >
-            <Link to="/login">{btnSwitch}</Link>
+          <li>
+            <Link to="/login">{btnSwitch}</Link> {loginName}
           </li>
         </ul>
       </div>
