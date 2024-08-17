@@ -29,7 +29,7 @@ const HeaderComponent = () => {
             <Link to="/cart">Cart</Link>
           </li>
           <li>
-            <Link to="/login">{btnSwitch}</Link> {loginName}
+            <Link to="/login">{btnSwitch}</Link>
           </li>
         </ul>
       </div>
