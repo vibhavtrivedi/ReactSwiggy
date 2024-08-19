@@ -12,6 +12,8 @@ import HeaderComponent from "./components/Header/Header";
 import ResturantMenuComponent from "./components/ResturantMenu/ResturantMenu";
 import About from "./components/About/About";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import { appStore } from "./utils/appStore";
 
 const AppLayout = () => {
   const [userName, setUserName] = useState();
@@ -22,12 +24,14 @@ const AppLayout = () => {
     setUserName(data.loginName);
   }, []);
   return (
-    <div className="app">
+    <Provider store={appStore}>
       <UserContext.Provider value={{ loginName: userName, setUserName }}>
-        <HeaderComponent />
-        <Outlet />
+        <div className="app">
+          <HeaderComponent />
+          <Outlet />
+        </div>
       </UserContext.Provider>
-    </div>
+    </Provider>
   );
 };
 
