@@ -1,7 +1,12 @@
+import { useSelector } from "react-redux";
+import "./Cart.css";
+import ItemList from "../ResturantMenu/ItemList";
+
 const CartComponent = () => {
+  const cartStoreItems = useSelector((store) => store.cart.items);
   return (
-    <div>
-      <h1>This is the component of cart</h1>
+    <div className="cart-page">
+      <ItemList itemList={cartStoreItems} btn="delete" />
     </div>
   );
 };

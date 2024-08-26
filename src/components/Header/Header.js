@@ -2,10 +2,13 @@ import { useContext, useEffect, useState } from "react";
 import { LOGO_URL } from "../../utils/constants";
 import { Link } from "react-router-dom";
 import UserContext from "../../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const HeaderComponent = () => {
   const [btnSwitch, setBtnSwitch] = useState("Login");
   const { loginName } = useContext(UserContext);
+  const storeItems = useSelector((store) => store.cart.items);
+  console.log("store items", storeItems);
   useEffect(() => {}, []);
   return (
     <div className="header">
@@ -26,7 +29,7 @@ const HeaderComponent = () => {
             <Link to="/about">About Us</Link>
           </li>
           <li>
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">Cart {storeItems.length}</Link>
           </li>
           <li>
             <Link to="/login">{btnSwitch}</Link>

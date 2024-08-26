@@ -17,7 +17,7 @@ const ResturantCategory = ({ data, showItem, setShowIndex }) => {
         </span>
         <span>+</span>
       </div>
-      {showItem && <ItemList itemList={data?.itemCards} />}
+      {showItem && <ItemList itemList={data?.itemCards} btn={"add"} />}
     </div>
   );
 };
