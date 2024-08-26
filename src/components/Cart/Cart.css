@@ -3,4 +3,18 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    margin: 20px 0;
+    .del-cart {
+        border: 1px solid #fff;
+        padding: 10px;
+        color: #fff;
+        font-weight: 700;
+        font-size: 14px;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    .del-cart:hover {
+        border: 1px solid #9acc14;
+        color: #9acc14;
+    }
 }
